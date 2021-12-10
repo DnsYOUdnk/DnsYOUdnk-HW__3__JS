@@ -123,17 +123,26 @@ console.log('Cумма введенных чисел ' + sumQ, 'Среднее �
 
 // Задание 9??? 
 
-/* let str = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57',
-    strNum = '';
-for(let i = 0; i < str.length; i++) {
-    strNum += str[i];
-
-} */
-
+let str = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57',
+    strNum = '',
+    min = +Infinity,
+    max = -Infinity;
+for(let i = 0; i < str.length+1; i++) {
+    if(str[i] != ' ' && str[i] != undefined) {
+        strNum += str[i];
+    } else {
+        console.log(strNum);
+        min = min < strNum ? min : strNum;
+        max = max > strNum ? max : strNum;
+        strNum = '';
+    }
+}
+console.log('Min: ' + min);
+console.log('Max: ' + max);
 
 // Задание 10
 
-let v = '356',
+/* let v = '356',
     vNum,
     vRvrs = '',
     vSum = 0;
@@ -143,9 +152,9 @@ for (let i = 0; i < v.length; i++) {
     console.log('Число ' + vNum);
 }   
 for (let j = v.length - 1; j >= 0; j--) {
-    vRvrs += +v[j] % 10;
+    vRvrs += +v[j];
 }
 console.log('Количество чисел ' + v.length);
 console.log('Сумма чисел ' + vSum);
 console.log('Обратные числа ' + vRvrs);
-
+ */
